@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define input(a) cin >> a;
+#define output(a) cout << a
+#define FOR(i, a, b) for(ll i = a; i <= b; i++)
+#define FOD(i, a, b) for(ll i = a; i >= b; i--)
+#define vt(a) vector<a>
+#define st(a) stack<a>
+#define qu(a) queue<a>
+#define IOS ios_base::sync_with_stdio(false); cin.tie(0)
+using namespace std;
+
+ll n;
+ll k;
+ll a[10000009];
+ll b[10000009];
+ll res = 0;
+
+int main() {
+    IOS;
+    input(n);
+    input(k);
+    FOR(i, 1, n){
+        input(a[i]);
+        b[a[i]]++;
+    }
+
+    output(b[k]);
+    return 0;
+}
