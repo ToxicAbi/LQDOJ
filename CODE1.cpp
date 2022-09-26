@@ -1,3 +1,8 @@
+/*
+    Source: AbiDev
+    Link: https://github.com/ToxicAbi/LQDOJ/edit/LQDOJ/CODE1.cpp
+*/
+
 #include<bits/stdc++.h>
 #define ll long long
 #define input(a) cin >> a
