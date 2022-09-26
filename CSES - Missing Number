@@ -1,3 +1,7 @@
+/*
+    Source: AbiDev
+    Link: https://github.com/ToxicAbi/LQDOJ/edit/LQDOJ/CSES%20-%20Missing%20Number
+*/
 #include<bits/stdc++.h>
 #define ll long long
 #define input(a) cin >> a;
