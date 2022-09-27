@@ -1,0 +1,56 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define input(a) cin >> a; cin.ignore();
+#define output(a) cout << a
+#define FOR(i, a, b) for(ll i = a; i <= b; i++)
+#define FOD(i, a, b) for(ll i = a; i >= b; i--)
+#define vt(a) vector<a>
+#define stk(a) stack<a>
+#define qu(a) queue<a>
+#define st(a) set<a>
+#define pa(a, b) pair<a, b>
+#define IOS ios_base::sync_with_stdio(false); cin.tie(0)
+#define pb push_back
+#define mp make_pair
+using namespace std;
+
+ll n;
+ll a[10000009];
+ll b[10000009];
+
+int main() {
+    IOS;
+    input(n);
+
+    FOR(i, 1, n){
+        ll x;
+        ll y;
+        input(x);
+        input(y);
+        a[i] = x;
+        b[i] = y;
+    }
+
+    sort(a + 1, a + n + 1);
+    sort(b + 1, b + n + 1);
+    ll res = 0;
+    ll c = 0;
+    ll x = 1;
+    ll y = 1;
+
+    while(x <= n){
+        if(a[x] < b[y]){
+            c++;
+            x++;
+        }
+        else{
+            c--;
+            y++;
+        }
+        res = max(res, c);
+    }
+
+    output(res);
+
+    return 0;
+}
