@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define input(a) cin >> a; cin.ignore()
+#define output(a) cout << a
+#define FOR(i, a, b) for(ll i = a; i <= b; i++)
+#define FOD(i, a, b) for(ll i = a; i >= b; i--)
+#define vt(a) vector<a>
+#define stk(a) stack<a>
+#define qu(a) queue<a>
+#define st(a) set<a>
+#define pa(a, b) pair<a, b>
+#define IOS ios_base::sync_with_stdio(false); cin.tie(0)
+#define pb push_back
+#define mp make_pair
+#define ucln(a, b) __gcd(a, b)
+using namespace std;
+
+double h;
+
+int main() {
+    IOS;
+    input(h);
+
+    printf("%0.2f", sqrt(2 * h * 9.8));
+
+    return 0;
+}
+
