@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define input(a) cin >> a; cin.ignore()
+#define output(a) cout << a
+#define FOR(i, a, b) for(ll i = a; i <= b; i++)
+#define FOD(i, a, b) for(ll i = a; i >= b; i--)
+#define vt(a) vector<a>
+#define stk(a) stack<a>
+#define qu(a) queue<a>
+#define st(a) set<a>
+#define pa(a, b) pair<a, b>
+#define IOS ios_base::sync_with_stdio(false); cin.tie(0)
+#define pb push_back
+#define mp make_pair
+using namespace std;
+
+ll a;
+ll b;
+ll c;
+
+int main() {
+    IOS;
+    input(a);
+    input(b);
+    input(c);
+    ll resA;
+    ll resB;
+    ll resC;
+    if(a % 2 != 0) resA = (a - 1) / 2 + 1;
+    else resA = a / 2;
+    if(b % 2 != 0) resB = (b - 1) / 2 + 1;
+    else resB = b / 2;
+    if(c % 2 != 0) resC = (c - 1) / 2 + 1;
+    else resC = c / 2;
+
+    output("So ban toi thieu can mua: ");
+    output(resA + resB + resC);
+    return 0;
+}
+
