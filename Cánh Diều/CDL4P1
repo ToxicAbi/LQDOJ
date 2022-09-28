@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define input(a) cin >> a
+#define output(a) cout << a
+#define FOR(i, a, b, x) for(ll i = a; i <= b; i += x)
+#define FOD(i, a, b, x) for(ll i = a; i >= b; i -= x)
+#define vt(a) vector<a>
+#define stk(a) stack<a>
+#define qu(a) queue<a>
+#define st(a) set<a>
+#define pa(a, b) pair<a, b>
+#define IOS ios_base::sync_with_stdio(false); cin.tie(0)
+#define pb push_back
+#define mp make_pair
+#define ucln(a, b) __gcd(a, b)
+#define gl(a) getline(cin, a)
+#define ci cin.ignore()
+using namespace std;
+
+ll a;
+ll b;
+
+int main() {
+    IOS;
+    
+    input(a);
+    input(b);
+    output(max(a, b));
+
+    return 0;
+}
+
