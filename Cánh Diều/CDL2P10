@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define input(a) cin >> a; cin.ignore()
+#define output(a) cout << a
+#define FOR(i, a, b) for(ll i = a; i <= b; i++)
+#define FOD(i, a, b) for(ll i = a; i >= b; i--)
+#define vt(a) vector<a>
+#define stk(a) stack<a>
+#define qu(a) queue<a>
+#define st(a) set<a>
+#define pa(a, b) pair<a, b>
+#define IOS ios_base::sync_with_stdio(false); cin.tie(0)
+#define pb push_back
+#define mp make_pair
+#define ucln(a, b) __gcd(a, b)
+#define gl(a) getline(cin, a)
+using namespace std;
+
+ll a;
+ll b;
+ll d1;
+ll d2;
+ll d3;
+ll x;
+
+int main() {
+    IOS;
+    input(a);
+    input(b);
+    input(d1);
+    input(d2);
+    input(d3);
+    input(x);
+
+    if(x <= a) output(x * d1);
+    else if(x > a && x <= b) output(a * d1 + (x - a) * d2);
+    else output(a * d1 + (b - a) * d2 + (x - b) * d3);
+
+    return 0;
+}
+
