@@ -1,0 +1,65 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define input(a) cin >> a
+#define output(a) cout << a
+#define nl output("\n")
+#define FOR(i, a, b, x) for(ll i = a; i <= b; i += x)
+#define FOD(i, a, b, x) for(ll i = a; i >= b; i -= x)
+#define FORM(i, a, b, x) for(ll i = a; i <= b; i *= x)
+#define FODM(i, a, b, x) for(ll i = a; i >= b; i /= x)
+#define vt(a) vector<a>
+#define stk(a) stack<a>
+#define qu(a) queue<a>
+#define st(a) set<a>
+#define pa(a, b) pair<a, b>
+#define IOS ios_base::sync_with_stdio(false); cin.tie(0)
+#define pb push_back
+#define mp make_pair
+#define ucln(a, b) __gcd(a, b)
+#define gl(a) getline(cin, a)
+#define ci cin.ignore()
+#define inputArr(a, i, j) FOR(k, i, j, 1) input(a[k]);
+#define f first
+#define s second
+#define all(a) a.begin(), a.end()
+#define inf LONG_MAX
+using namespace std;
+
+char a[1009][1009];
+ll res = 0;
+bool ld[10000009];
+bool rd[10000009];
+bool row[10000009];
+
+void handle(ll j){
+    if(j == 8){
+        res++;
+        return;
+    }
+    FOR(i, 0, 7, 1){
+        if(a[i][j] == '.' && ld[i - j + 7] == 0 && rd[i + j] == 0 && row[i] == 0){
+            ld[i - j + 7] = 1;
+            rd[i + j] = 1;
+            row[i] = 1;
+            handle(j + 1);
+            ld[i - j + 7] = 0;
+            rd[i + j] = 0;
+            row[i] = 0;
+        }
+    }
+}
+
+int main() {
+    IOS;
+
+    FOR(i, 0, 7, 1){
+        FOR(j, 0, 7, 1){
+            input(a[i][j]);
+        }
+    }
+
+    handle(0);
+
+    output(res);
+    return 0;
+}
