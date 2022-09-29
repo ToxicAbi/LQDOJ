@@ -1,0 +1,54 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define input(a) cin >> a
+#define output(a) cout << a
+#define nl output("\n")
+#define FOR(i, a, b, x) for(ll i = a; i <= b; i += x)
+#define FOD(i, a, b, x) for(ll i = a; i >= b; i -= x)
+#define FORM(i, a, b, x) for(ll i = a; i <= b; i *= x)
+#define FODM(i, a, b, x) for(ll i = a; i >= b; i /= x)
+#define vt(a) vector<a>
+#define stk(a) stack<a>
+#define qu(a) queue<a>
+#define st(a) set<a>
+#define pa(a, b) pair<a, b>
+#define IOS ios_base::sync_with_stdio(false); cin.tie(0)
+#define pb push_back
+#define mp make_pair
+#define ucln(a, b) __gcd(a, b)
+#define gl(a) getline(cin, a)
+#define ci cin.ignore()
+#define inputArr(a, i, j) FOR(k, i, j, 1) input(a[k]);
+#define f first
+#define s second
+#define all(a) a.begin(), a.end()
+#define inf LONG_MAX
+using namespace std;
+
+ll n;
+ll s = 0;
+ll res = inf;
+ll a[10000009];
+
+int main() {
+    IOS;
+
+    input(n);
+
+    FOR(i, 0, n - 1, 1){
+        input(a[i]);
+        s += a[i];
+    }
+
+    FOR(i, 0, (1 << n) - 1, 1){
+        ll sum = 0;
+        FOR(j, 0, n - 1, 1){
+            if(i & 1 << j) sum += a[j];
+        }
+        ll temp = abs((s - sum) - sum);
+        res = min(res, temp);
+    }
+
+    output(res);
+    return 0;
+}
