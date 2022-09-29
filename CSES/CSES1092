@@ -1,0 +1,88 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define input(a) cin >> a
+#define output(a) cout << a
+#define nl output("\n")
+#define FOR(i, a, b, x) for(ll i = a; i <= b; i += x)
+#define FOD(i, a, b, x) for(ll i = a; i >= b; i -= x)
+#define FORM(i, a, b, x) for(ll i = a; i <= b; i *= x)
+#define FODM(i, a, b, x) for(ll i = a; i >= b; i /= x)
+#define vt(a) vector<a>
+#define stk(a) stack<a>
+#define qu(a) queue<a>
+#define st(a) set<a>
+#define pa(a, b) pair<a, b>
+#define IOS ios_base::sync_with_stdio(false); cin.tie(0)
+#define pb push_back
+#define mp make_pair
+#define ucln(a, b) __gcd(a, b)
+#define gl(a) getline(cin, a)
+#define ci cin.ignore()
+#define inputArr(a, i, j) FOR(k, i, j, 1) input(a[k]);
+#define f first
+#define s second
+#define all(a) a.begin(), a.end()
+using namespace std;
+
+ll n;
+
+int main() {
+    IOS;
+    input(n);
+
+    if(n % 4 == 0){
+        vt(ll) a;
+        vt(ll) b;
+        FOR(i, 1, n, 1){
+            if(i % 4 == 1 || i % 4 == 0){
+                a.pb(i);
+            }
+            else{
+                b.pb(i);
+            }
+        }
+            output("YES");
+            nl;
+            output(a.size());
+            nl;
+            FOR(i, 0, a.size() - 1, 1){
+                output(a[i]);
+                output(" ");
+            }
+            nl;
+            output(b.size());
+            nl;
+            FOR(i, 0, b.size() - 1, 1){
+                output(b[i]);
+                output(" ");
+            }
+    }
+    else if(n % 4 == 3){
+        vt(ll) a;
+        vt(ll) b;
+        FOR(i, 1, n - 1, 1){
+            if(i % 4 == 2 || i % 4 == 1) a.pb(i);
+            else b.pb(i);
+        }
+
+        b.pb(n);
+        output("YES");
+        nl;
+        output(a.size());
+        nl;
+        FOR(i, 0, a.size() - 1, 1){
+            output(a[i]);
+            output(" ");
+        }
+        nl;
+        output(b.size());
+        nl;
+        FOR(i, 0, b.size() - 1, 1){
+            output(b[i]);
+            output(" ");
+        }
+    }
+    else output("NO");
+
+    return 0;
+}
