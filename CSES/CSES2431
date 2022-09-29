@@ -1,0 +1,73 @@
+#include<bits/stdc++.h>
+#define ll long long
+#define input(a) cin >> a
+#define output(a) cout << a
+#define nl output("\n")
+#define FOR(i, a, b, x) for(ll i = a; i <= b; i += x)
+#define FOD(i, a, b, x) for(ll i = a; i >= b; i -= x)
+#define FORM(i, a, b, x) for(ll i = a; i <= b; i *= x)
+#define FODM(i, a, b, x) for(ll i = a; i >= b; i /= x)
+#define vt(a) vector<a>
+#define stk(a) stack<a>
+#define qu(a) queue<a>
+#define st(a) set<a>
+#define pa(a, b) pair<a, b>
+#define IOS ios_base::sync_with_stdio(false); cin.tie(0)
+#define pb push_back
+#define mp make_pair
+#define ucln(a, b) __gcd(a, b)
+#define gl(a) getline(cin, a)
+#define ci cin.ignore()
+#define inputArr(a, i, j) FOR(k, i, j, 1) input(a[k]);
+#define f first
+#define s second
+#define all(a) a.begin(), a.end()
+#define inf LONG_MAX
+using namespace std;
+
+ll q;
+vt(ll) power(19, 1);
+
+int main() {
+    IOS;
+
+    input(q);
+
+    FOR(i, 1, 18, 1) power[i] = power[i - 1] * 10;
+
+    while(q--){
+        ll x;
+        input(x);
+        ll u = 0;
+        ll v = 0;
+        ll num;
+        FOR(i, 1, 18, 1){
+            u += (power[i] - power[i - 1]) * i;
+            if(u >= x){
+                num = i;
+                break;
+            }
+            v += (power[i] - power[i - 1]) * i;
+        }
+        ll minA = power[num - 1];
+        ll maxA = power[num] - 1;
+        ll best = 0;
+        ll pos;
+        while(minA <= maxA){
+            ll temp = (minA + maxA) / 2;
+            ll tempPos = v + 1 + (temp - power[num - 1]) * num;
+            if(tempPos <= x){
+                if(temp > best){
+                    best = temp;
+                    pos = tempPos;
+                }
+                minA = temp + 1;
+            }
+            else maxA = temp - 1;
+        }
+        string number = to_string(best);
+        output(number[x - pos]);
+        nl;
+    }
+    return 0;
+}
